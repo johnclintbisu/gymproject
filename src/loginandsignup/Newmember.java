@@ -27,7 +27,7 @@ public class Newmember extends javax.swing.JFrame {
          initComponents();
 
         try {
-            int id = 1; // Default ID if no records exist
+            int id2 = 1; // Default ID if no records exist
             Connection con = ConnectionProvider.getCon();
             Statement st = con.createStatement();
             java.sql.ResultSet rs = st.executeQuery("SELECT MAX(id) FROM cross_table ");
@@ -35,11 +35,11 @@ public class Newmember extends javax.swing.JFrame {
             if (rs.next()) {
                 int maxId = rs.getInt(1);
                 if (!rs.wasNull()) {
-                    id = maxId + 1; // Increment the maximum ID
+                    id2 = maxId + 1; // Increment the maximum ID
                 }
             }
 
-            jLabel4.setText(String.valueOf(id)); // Set the incremented ID to jLabel2
+            jLabel4.setText(String.valueOf(id2)); // Set the incremented ID to jLabel2
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error: " + e.getMessage(), "Initialization Error", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
@@ -109,6 +109,12 @@ public class Newmember extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         jLabel5.setText("Name");
+
+        tname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tnameActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         jLabel6.setText("Mobile Number");
@@ -386,6 +392,10 @@ public class Newmember extends javax.swing.JFrame {
     private void jButton3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jButton3AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3AncestorAdded
+
+    private void tnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tnameActionPerformed
 
     /**
      * @param args the command line arguments

@@ -97,6 +97,11 @@ public class home extends javax.swing.JFrame {
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/task.png"))); // NOI18N
         jMenu3.setText("List of Members");
         jMenu3.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu3MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu3);
 
         jMenu4.setForeground(new java.awt.Color(51, 51, 51));
@@ -104,6 +109,11 @@ public class home extends javax.swing.JFrame {
         jMenu4.setText("Payment");
         jMenu4.setFocusable(false);
         jMenu4.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu4MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu4);
 
         jMenu5.setForeground(new java.awt.Color(51, 51, 51));
@@ -207,6 +217,14 @@ public class home extends javax.swing.JFrame {
     private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
         new updatedeletemember().setVisible(true);
     }//GEN-LAST:event_jMenu2MouseClicked
+
+    private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
+       new listofmembers().setVisible(true);
+    }//GEN-LAST:event_jMenu3MouseClicked
+
+    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+        new payment().setVisible(true);
+    }//GEN-LAST:event_jMenu4MouseClicked
 
     /**
      * @param args the command line arguments
